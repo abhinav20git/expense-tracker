@@ -8,7 +8,7 @@ function Logo() {
 
           <PiggyBank/>
           <span className='font-bold text-2xl  '>
-              Expense Tracker
+          BudgetBuddy
           </span>
       </div>
     
