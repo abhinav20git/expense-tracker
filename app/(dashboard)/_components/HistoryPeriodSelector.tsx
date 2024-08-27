@@ -32,7 +32,7 @@ function HistoryPeriodSelector({period,setPeriod,timeframe,setTimeFrame}:Props) 
       </SkeletonWrapper>
 
       <div className='flex flex-wrap items-center gap-2'>
-        <SkeletonWrapper isLoading={historyPeriods.isFetching}>
+        <SkeletonWrapper isLoading={historyPeriods.isFetching} fullWidth={false}>
           <YearSelector period={period} setPeriod={setPeriod} years={historyPeriods.data || []} />
         </SkeletonWrapper>
 
@@ -45,7 +45,6 @@ function HistoryPeriodSelector({period,setPeriod,timeframe,setTimeFrame}:Props) 
     </div>
   )
 }
-
 export default HistoryPeriodSelector;
 
 function YearSelector({period,setPeriod,years}:{period:Period;setPeriod:(period:Period)=>void;years:GetHistoryPeriodsResponseType;}){

@@ -42,7 +42,9 @@ export async function GET(request:Request){
     return Response.json(data);
 }
 
-export type GetHistoryDataResponseType=Awaited<ReturnType<typeof getHistoryData>>;
+export type GetHistoryDataResponseType=Awaited<
+    ReturnType<typeof getHistoryData>
+>;
 
 async function getHistoryData(
     userId:string,
@@ -93,15 +95,16 @@ async function getYearHistoryData(userId:string, year:number){
     
     const month=result.find((row)=>row.month===i);
     if(month){
-        expense=month._sum.expense || 0;
-        income=month._sum.income || 0;
+        expense = month._sum.expense || 0;
+        income = month._sum.income || 0;
     }
 
     history.push({
         year,
+        month:i, 
         expense,
         income, 
-        month:i,         
+                
     });
     }
     return history;
